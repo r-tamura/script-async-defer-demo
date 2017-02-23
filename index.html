@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script async src="./async.js"></script>
+	<script async defer src="./async-defer.js"></script>
+	<script defer src="./defer.js"></script>
+  <script src="./normal.js"></script>
+	<title>Async & Defer Demo</title>
+</head>
+<body>
+  <main>
+  <h1>Async & Defer Demo</h1>
+  <table style="text-align:center">
+    <thead>
+      <tr>
+        <th>
+        <th>Fetched
+        <th>Evaluated
+      </tr>
+    <thead>
+    <tbody>
+      <tr>
+        <td>&lt;script&gt;
+        <td>block
+        <td>ASAP
+      </tr>
+      <tr>
+        <td>&lt;script async&gt;
+        <td>in parallel
+        <td>ASAP
+      </tr>
+      <tr>
+        <td>&lt;script defer&gt;
+        <td>in parallel
+        <td>before DOMContentLoaded
+      </tr>
+    </tbody>
+  </table>
+</main>
+<aside>
+  <header><h2>References</h2></header>
+  <ul>
+    <li><a href="https://seo-hacker.com/optimizing-site-speed-asynchronous-deferred-javascript/">Optimizing Site Speed: Asynchronous and Deferred Javascript</a>
+    <li><a href="http://w3c.github.io/html/single-page.html#attr-script-async">HTML5.2 Scripting</a>
+    <li><a href="http://www.growingwiththeweb.com/2014/02/async-vs-defer-attributes.html">async vs defer attributes</a>
+  </ul>
+</aside>
+<script type="text/javascript">
+  document.addEventListener('DOMContentLoaded', e => console.log('DOM Content Loaded'))
+  window.addEventListener('load', e => console.log('Document Loaded'))
+</script>
+</body>
+</html>
